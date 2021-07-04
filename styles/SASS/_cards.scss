@@ -1,0 +1,90 @@
+.cards {
+
+    display: grid;
+    grid-template:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+    ;
+    gap: 2rem;
+
+    @media (min-width:  700px){
+        grid-template:
+        "card1 card2"
+        "card3 card4"
+        ;
+    }
+
+    @media (min-width:  1150px){
+        grid-template:
+        "card1 card2 card4"
+        "card1 card3 card4"
+    ;
+    }
+
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        max-width: 350px;
+        padding: 2rem;
+
+        background-color: #FFF;
+        border-radius: 10px;
+        border-top: 4px solid;
+        box-shadow: 0px 15px 30px -11px transparentize($color--neutral--grayish-blue, .5);
+
+        transition: 300ms;
+
+        cursor: pointer;
+
+        &:hover {
+
+            transform: scale(1.05, 1.05);
+            
+        }
+
+        &__title {
+            margin-bottom: 1rem;
+        }
+
+        &__description {
+
+            margin-bottom: 3rem;
+            color: $color--neutral--grayish-blue;
+            font-size: rem(13);
+        }
+    
+        &__image {
+            align-self: flex-end;
+        }
+
+        &--supervisior {
+            grid-area: card1;
+            align-self: center;
+            border-color:  $color--primary--cyan;
+        }
+
+        &--team-builder {
+            grid-area: card2;
+            border-color:  $color--primary--red;
+        }
+
+        &--karma {
+            grid-area: card3;
+            border-color:  $color--primary--orange;
+        }
+
+        &--calculator {
+            grid-area: card4;
+            align-self: center;
+            border-color:  $color--primary--blue;
+        }
+    }
+}
+
+
